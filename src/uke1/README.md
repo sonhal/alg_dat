@@ -21,11 +21,11 @@ A:
     int m = 0; (1)               // indeks til største verdi
     int maksverdi = a[0]; (2)    // største verdi
 
-    for (int i = 1; i < a.length; i++) (1 + 2(n - 1))
-    if (a[i] > maksverdi) (1 (Når a[0] aksesseres))
+    for (int i = 1; i < a.length; i++) (1 + n + (n - 1))
+    if (a[i] > maksverdi) 2(n - 1)
     {
-      maksverdi = a[i]; (1)     // største verdi oppdateres
-      m = i; (1)                // indeks til største verdi oppdateres
+      maksverdi = a[i]; 2(x)     // største verdi oppdateres
+      m = i; (x)                // indeks til største verdi oppdateres
     }
     return m; (1)   // returnerer indeks/posisjonen til største verdi
 
