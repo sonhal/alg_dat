@@ -1,6 +1,6 @@
 package no.algdat.uke.uke2;
 
-import no.algdat.uke.hjelpeklasser.Tabell;
+import no.algdat.hjelpeklasser.Tabell;
 
 public class Program {
 
