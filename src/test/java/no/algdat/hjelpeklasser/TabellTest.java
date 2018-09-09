@@ -3,6 +3,8 @@ package no.algdat.hjelpeklasser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TabellTest {
@@ -169,5 +171,36 @@ class TabellTest {
         int[] a = Tabell.randPerm(20); // tilfeldig permutasjon av 1 . . 20
         Tabell.sortering(a);
         Tabell.skriv(a);
+    }
+
+    @Test
+    void nestMaks4() {
+    }
+
+    @Test
+    void nestePermutasjon() {
+    }
+
+    @Test
+    void inversjoner() {
+        int[] a = {1,2,4,3,6,7,9,5,8,10};
+        System.out.println(Tabell.inversjoner(a));  // Utskrift: 5
+    }
+
+
+    @Test
+    void boble() {
+        int[] a = {5, 9, 6, 10, 2, 7, 3, 8, 4, 1};          // en heltallstabell
+        System.out.println(Arrays.toString(a));             // skriver ut tabellen
+
+        int antInv = Tabell.inversjoner(a);                 // Programkode 1.3.2 a)
+        System.out.println("Inversjoner: " + antInv);       // skriver ut
+
+        int antOmb = Tabell.boble(a);                       // ombyttinger
+        antInv = Tabell.inversjoner(a);                     // Programkode 1.3.2 a)
+
+        System.out.println(Arrays.toString(a));             // skriver ut tabellen
+        System.out.print("Ombyttinger: " + antOmb + "  ");  // ombyttinger
+        System.out.println("Inversjoner: " + antInv);       // inversjoner
     }
 }

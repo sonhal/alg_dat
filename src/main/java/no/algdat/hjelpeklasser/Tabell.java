@@ -344,4 +344,42 @@ public class Tabell {
         return true;                             // en ny permutasjon
     }
 
+    public static int inversjoner(int[] a)
+    {
+        int antall = 0;  // antall inversjoner
+        for (int i = 0; i < a.length - 1; i++)
+        {
+            for (int j = i + 1; j < a.length; j++)
+            {
+                if (a[i] > a[j]) antall++;  // en inversjon siden i < j
+            }
+        }
+        return antall;
+    }
+
+    public static int boble(int[] a)      // legges i samleklassen Tabell
+    {
+        int antall = 0;                     // antall ombyttinger i tabellen
+        for (int i = 1; i < a.length; i++)  // starter med i = 1
+        {
+            if (a[i - 1] > a[i])              // sammenligner to naboverdier
+            {
+                bytt(a, i - 1, i);              // bytter om to naboverdier
+                antall++;                       // teller opp ombyttingene
+            }
+        }
+        return antall;                      // returnerer
+    }
+
+    public static void boblesortering(int[] a)     // hører til klassen Tabell
+    {
+        for (int n = a.length; n > 1; n--)           // n reduseres med 1 hver gang
+        {
+            for (int i = 1; i < n; i++)                // går fra 1 til n
+            {
+                if (a[i - 1] > a[i]) bytt(a, i - 1, i);  // sammenligner/bytter
+            }
+        }
+    }
+
 }
