@@ -2,13 +2,17 @@ package no.algdat.uke.hjelpeklasser;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import no.algdat.uke.hjelpeklasser.Tabell;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TabellTest {
+    
+    int[] rand_tabel;
 
     @BeforeEach
     void setUp() {
+       rand_tabel = Tabell.randPerm(10);
     }
 
     @Test
@@ -17,6 +21,7 @@ class TabellTest {
 
     @Test
     void randPerm() {
+        System.out.println(rand_tabel[0]);
     }
 
     @Test
