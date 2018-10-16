@@ -9,3 +9,6 @@
 ### Sortert liste til binært søketre
 
 [bilde]()
+
+lagres som array
+perfekte og komplette trør
