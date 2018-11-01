@@ -190,5 +190,47 @@ Begrepene pre-, in- og postorden er blitt definert på en uformell og geometrisk
 
 En enkel huskeregel for inorden er:   venstre, node, høyre
 
+##### Postorden  En rekursiv definisjon:
 
+ 1. Vi starter i rotnoden.
+ 2. Videre gjelder for alle noder at først «besøker» vi nodens venstre barn hvis den har et venstre barn, så dens høyre
+  barn hvis den har et høyre barn og så «besøker» vi noden.
+  
+Eksempel: Også her gir den rekursive definisjonen at verdiene i treet i Figur 5.1.7 a) vil komme i den rekkefølgen som
+ ble annonsert ovenfor (i forbindelse med konturkurver): G, L, M, C, O, A, I, D, H, J, F, N, K, B, E.
  
+En enkel huskeregel for postorden er:   venstre, høyre, node
+
+##### Den neste
+Hvis vi står på en node, kan det være aktuelt å finne den neste (eller den forrige) i preorden, inorden eller postorden.
+ Men det kan by på problemer.
+ 
+Anta at p er en node i binærtreet som ikke er null. Da gjelder flg. regel for den neste.
+ 
+Preorden
+ - Hvis p har et venstre barn, så er det barnet den neste
+ - Hvis p ikke har et venstre barn, men et høyre barn, så er det barnet den neste.
+ - Hvis p ikke har barn dvs. p er en bladnode, så må vi først til den nørmeste (oppover i noden) noden q som har et
+ høyre barn og somhar p i sitt venstre subtre. Den neste til p er da det høyre barnet til q.
+ - Hvis det ikke finnes noen slik q, er p den siste i preorden.
+ 
+ Inorden
+  - Hvis p har et ikke-tomt høyre subtre, så er den neste den noden spm kommer først inorden i det subtreet.
+  - Hvis p har et tomt høyre subtre, så den neste den nærmeste noden oppover mot roten som har p i sitt venstre subtre.
+  - Hvis det ikke finnes noen slik node, er p den siste noden inorden.
+  
+Postorden:
+
+ - Hvis p ikke har en forelder ( p er rotnoden), så er p den siste i postorden.
+ - Hvis p er høyre barn til sin forelder f, er forelderen f den neste.
+ - Hvis p er venstre barn til sin forelder f, gjelder:
+ - Hvis p er enebarn (f.høyre er null), er forelderen f den neste.
+ - Hvis p ikke er enebarn (dvs. f.høyre er ikke null), så er den neste den noden som kommer først i postorden i subtreet
+ med f.høyre som rot.
+ 
+ 
+##### Speilvendt og omvendt orden
+Et binærtre speilvendes ved å rotere det om en vertikal linje gjennom roten, dvs. venstre og høyre barn bytter plass i
+alle noder. Tærerne i figuren under er speilvendte av hverandre
+
+![Figur 5.1.8 a)](https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/images/518a.png)

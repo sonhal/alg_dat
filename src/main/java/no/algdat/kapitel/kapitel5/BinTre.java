@@ -6,6 +6,8 @@ import no.algdat.hjelpeklasser.TabellKø;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
+import java.util.StringJoiner;
 
 public class BinTre<T> {
 
@@ -172,11 +174,54 @@ public class BinTre<T> {
         if(!tom()) inorden(rot, oppgave);
     }
 
+    public T førstInorden()
+    {
+        if (tom()) throw new NoSuchElementException("Treet er tomt!");
 
+        Node<T> p = rot;
+        while (p.venstre != null) p = p.venstre;
+
+        return p.verdi;
+    }
+
+    public T førstPostorden()
+    {
+        if (tom()) throw new NoSuchElementException("Treet er tomt!");
+
+        Node<T> p = rot;
+        while (true)
+        {
+            if (p.venstre != null) p = p.venstre;
+            else if (p.hoyre != null) p = p.hoyre;
+            else return p.verdi;
+        }
+    }
+
+    private static <T> void speilvend(Node<T> p)
+    {
+        if (p == null) return;   // tomt subtre
+
+        Node<T> q = p.venstre; p.venstre = p.hoyre; p.hoyre = q;  // bytter
+
+        speilvend(p.venstre); speilvend(p.hoyre);
+    }
+
+    public void speilvend()
+    {
+        if (antall() > 1) speilvend(rot);
+    }
 
     public int antall(){return antall;}
 
     public boolean tom() {return antall == 0;}
+
+    @Override
+    public String toString()
+    {
+        StringJoiner s = new StringJoiner(", ", "[", "]");
+        if (!tom()) inorden(x -> s.add(x != null ? x.toString() : "null"));
+        return s.toString();
+    }
 
 } // class BinTre<T>
 
