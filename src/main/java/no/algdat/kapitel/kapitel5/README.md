@@ -144,4 +144,51 @@ verdi for hver interasjon. Det betyr at den er av orden n der n er antall noder.
 legges i køen.
 
 
+#### Preorden, inorden og postorden
+
+Dybde først traverseringer
+ - preorden (eng: preorder)
+ - inorden (eng: inorder)
+ - postorden (eng: postorder)
+
+Hver av de tre typene traversering kan defineres ved hjelp av en enkel geometrisk regel. Se på flg. eksempel:
+![Figur 5.1.7 a)](https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/images/517a.png)
+<i>Figur 5.1.7 a) : Et binærtre med konturkurve</i>
+
+Figur 5.1.7 a) over viser det samme treet som i Figur 5.1.6 a). Det er bare tegnet litt bredere.
+I tillegg er det tegnet en stiplet strek eller kurve som starter rett opp til venstre for rotnoden. Videre bukter
+ den seg rundt nodene, går inn mellom forgreningene og ender rett opp til høyre for rotnoden. Vi kaller det treets
+  kontur eller konturkurve. Pilene gir kurven en retning. I tillegg har venstre side, undersiden og høyre side av hver
+   node blitt markert med en farget «prikk» der fargene er gul (høyre side), blå (undersiden) og grønn (høyre side).
+   
+Hvis vi starter ved rotnoden, følger konturkurven og skriver ut nodeverdiene ved passering av en farget «prikk»,
+ får vi flg. tre tilfeller:
+
+ 1. Skriver vi ut nodeverdien når den gule «prikken» passeres, får vi verdiene i preorden. For treet i Figur 5.1.7 a)
+  blir det E, I, G, A, L, O, M, C, B, H, D, K, N, J, F. Rotnoden kommer alltid først i preorden!
+
+ 2. Skriver vi ut nodeverdien når den blå «prikken» passeres, får vi verdiene i inorden og dermed
+  G, I, L, A, M, O, C, E, H, D, B, J, N, F, K for treet i Figur 5.1.7 a). Noden nederst til venstre kommer alltid først i inorden! 
+
+ 3. Skriver vi ut nodeverdien når den grønne «prikken» passeres, får vi dem i postorden.
+  Det blir da G, L, M, C, O, A, I, D, H, J, F, N, K, B, E. Rotnoden kommer alltid sist i postorden!
+Begrepene pre-, in- og postorden er blitt definert på en uformell og geometrisk måte. Vi trenger en mer formell definisjon.
+ For det første betyr ordet orden det samme som rekkefølge og de tre forstavelsene pre, in og post betyr foran, mellom og etter.
+
+
+##### Preorden  Det er lettest å definere denne traverseringsrekkefølgen rekursivt:
+
+ 1. Vi starter i rotnoden.
+ 2. Videre gjelder for alle noder at først «besøker» vi noden, så dens venstre barn hvis den har et venstre barn
+  og så dens høyre barn hvis den har et høyre barn.
+ 
+##### Inorden  Dette definerer vi også rekursivt:
+ 
+ 1. Vi starter i rotnoden.
+ 2. Videre gjelder for alle noder at først «besøker» vi nodens venstre barn hvis den har et venstre barn,
+  så noden og så dens høyre barn hvis den har et høyre barn
+
+En enkel huskeregel for inorden er:   venstre, node, høyre
+
+
  

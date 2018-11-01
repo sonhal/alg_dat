@@ -1,11 +1,13 @@
 package no.algdat.kapitel.kapitel5;
 
+import no.algdat.hjelpeklasser.Oppgave;
 import no.algdat.hjelpeklasser.Tabell;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.StringJoiner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -63,5 +65,29 @@ class BinTreTest {
 
         // Utskrift: Nivåer: [1, 2, 4, 4, 4] Treets bredde: 4 Treets høyde: 4
 
+    }
+
+    @Test
+    void preorden() {
+        int[] posisjon = {1,2,3,4,5,6,7,10,11,13,14,22,23,28,29};  // posisjoner og
+        String[] verdi = "EIBGAHKLODNMCJF".split("");              // verdier i nivåorden
+        BinTre<String> tre = new BinTre<>(posisjon, verdi);        // en konstruktør
+
+        StringJoiner s = new StringJoiner(", " ,"[", "]");         // StringJoiner
+        tre.preorden(tegn -> s.add(tegn));                         // tegn = String
+
+        System.out.println(s);
+        // Utskrift: [E, I, G, A, L, O, M, C, B, H, D, K, N, J, F]
+    }
+
+    @Test
+    void inorden() {
+        int[] posisjon = {1,2,3,4,5,6,7,9,10,11,12,14};       // posisjonene og
+        Integer[] verdi = {7,3,10,1,5,9,12,2,4,6,8,11};       // verdiene i nivåorden
+
+        BinTre<Integer> tre = new BinTre<>(posisjon, verdi);  // konstruktør
+
+        tre.inorden(Oppgave.konsollutskrift());               // skriver ut
+        // Utskrift: 1 2 3 4 5 6 7 8 9 10 11 12
     }
 }
