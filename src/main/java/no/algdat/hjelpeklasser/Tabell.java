@@ -48,6 +48,11 @@ public class Tabell {
         char temp = a[i]; a[i] = a[j]; a[j] = temp;
     }
 
+    public static <T> void bytt(T[] a, int i, int j){
+        T temp = a[i]; a[i] = a[j]; a[j] = temp;
+    }
+
+
     public static void skriv(int[] a, int fra, int til){
         fratilKontroll(a.length, fra, til);
         if (til - fra > 0) System.out.print(a[fra]);

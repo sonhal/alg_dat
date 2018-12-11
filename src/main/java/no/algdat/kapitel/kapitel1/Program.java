@@ -63,4 +63,19 @@ public class Program {
     }
 
 
+
+    public static void snu(int[] tab, int v, int h){
+        while (v < h)Tabell.bytt(tab, v++, h--);
+    }
+
+    public static void snu(int[] tab, int fra){
+        snu(tab, fra, tab.length - 1);
+    }
+
+    public static void snu(int[] tab){
+        snu(tab, 0, tab.length -1);
+    }
+
+
+
 }
