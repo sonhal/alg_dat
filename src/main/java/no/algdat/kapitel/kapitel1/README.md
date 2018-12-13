@@ -23,3 +23,8 @@ Finn midten m = (v + h)/2.
 Hvis verdi == a[m] , er vi ferdige!
 Hvis verdi > a[m] , settes v = m + 1 og hvis ikke, settes h = m – 1.
 Hvis v <= h, gå til 2. Hvis v > h, er a[v:h] tom og verdi er ikke i tabellen.
+
+
+
+### Shellsortering
+Tabellen fortløpende deles opp i mindre og mindre grupper av verdier og de sorteres hver for seg ved hjelp av innsettingssortering. Det kalles shellsortering etter Donald Shell.
