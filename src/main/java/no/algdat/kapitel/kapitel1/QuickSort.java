@@ -1,7 +1,5 @@
 package no.algdat.kapitel.kapitel1;
-
 import no.algdat.hjelpeklasser.Tabell;
-
 import java.util.Comparator;
 
 public class QuickSort {
@@ -26,5 +24,7 @@ public class QuickSort {
     public static <T> int parter(T[] tab, int fra, int til, T skilleverdi, Comparator<? super T> comparator) {
         return parter0(tab, fra, til - 1, skilleverdi, comparator);
     }
+
+
 
 }

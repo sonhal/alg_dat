@@ -28,3 +28,9 @@ Hvis v <= h, gå til 2. Hvis v > h, er a[v:h] tom og verdi er ikke i tabellen.
 
 ### Shellsortering
 Tabellen fortløpende deles opp i mindre og mindre grupper av verdier og de sorteres hver for seg ved hjelp av innsettingssortering. Det kalles shellsortering etter Donald Shell.
+
+
+
+
+## 1.4  Generiske algoritmer
+
